@@ -1,0 +1,123 @@
+/* SERVICES */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 4rem;
+}
+
+.service-card {
+  padding: 3rem;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.service-card:hover .service-icon {
+  color: var(--gold-light);
+}
+
+.service-title {
+  font-family: var(--font-playfair);
+  font-size: 1.8rem;
+}
+
+.service-desc {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.service-card:hover .service-desc {
+  color: rgba(245, 240, 232, 0.7);
+}
+
+/* CONTACT */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 4rem;
+  gap: 6rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contact-item-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.contact-item-value {
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form-input, .form-textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 0;
+  font-family: var(--font-dm-mono);
+  font-size: 0.9rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus, .form-textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.success-message {
+  padding: 2rem;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid var(--gold);
+  color: var(--ink);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: 1fr; padding: 2rem; }
+  .contact-container { grid-template-columns: 1fr; padding: 2rem; gap: 4rem; }
+}
