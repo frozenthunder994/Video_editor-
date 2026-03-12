@@ -53,6 +53,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { AuthProvider } from "@/context/AuthContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -61,11 +63,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${playfair.variable} ${syne.variable} ${dmMono.variable}`}>
-        <GrainOverlay />
-        <CustomCursor />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <AuthProvider>
+          <GrainOverlay />
+          <CustomCursor />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
